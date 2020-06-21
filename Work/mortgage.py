@@ -32,3 +32,25 @@ while principal > 0:
 print('Total paid', round(total_paid, 2))
 print('Months', month)
 
+string1 = "    Here is where everything starts"
+string2 = string1.strip()
+print(string2)
+print(string2.upper())
+s = "Hello World"
+t = s.replace("Hello", "replacing Hello with HALLO")
+print(t)
+
+
+# s = ["E", "M", "I", "L", "I", "0"]
+s = "EmilioisThanos"
+joinfunc = " ".join(s)
+print(joinfunc)
+print(s.find('T'))
+
+string5 = b"Yo soy una frase binaria"
+print(string5[0])
+string6 = string5.upper()
+print(string6)
+
+decode1 = string6.decode('utf-8')
+print(decode1)
