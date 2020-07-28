@@ -1,7 +1,6 @@
 import csv
 from pprint import pprint
 
-
 # def read_portfolio(filename):
 #
 #     """ Computes the total cost (shares*price) of a portfolio file """
@@ -21,14 +20,13 @@ from pprint import pprint
 
 # Now as a dictionary:
 
+portfolio = []
+
 
 def read_portfolio(filename):
-
     """ Computes the total cost (shares*price) of a portfolio file """
 
     with open(filename, 'rt') as file:
-
-        portfolio = []
         header = next(file)
         total = 0
         for line in file:
@@ -43,9 +41,10 @@ def read_portfolio(filename):
         return portfolio
 
 
-def read_prices(filename):
+prices = {}
 
-    prices = {}
+
+def read_prices(filename):
     with open(filename) as f:
         rows = csv.reader(f)
         for row in rows:
@@ -62,8 +61,27 @@ pprint(cost)
 print('***************************')
 pprint(stock_prices)
 
+# Calculate the total cost of the portfolio
+total_cost = 0
 
+for s in portfolio:
+    total_cost += s['shares'] * s['price']
 
+print('The total cost is ', total_cost)
+print('**************  ********** ***********')
 
+# Compute the current value of the portfolio
 
+# My answer
+# portfolio_value_before = 0
+# for list_from_dict in cost:
+#     portfolio_value_before += int(list_from_dict['shares']) * float(list_from_dict['price'])
+# print('This is the value of the portfolio before -->> ', portfolio_value_before)
+# print('***** *** ** ** ** ** **')
+total_value = 0.0
+for s in portfolio:
+    print(s)
+    total_value += s['shares'] * prices[s['name']]
 
+print('Current value ', total_value)
+print('Gain', total_value - total_cost)
