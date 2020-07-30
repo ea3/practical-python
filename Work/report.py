@@ -85,3 +85,26 @@ for s in portfolio:
 
 print('Current value ', total_value)
 print('Gain', total_value - total_cost)
+print('************************************************************')
+print('************************************************************')
+
+
+def make_report(list_of_stocks, prices_of_stocks):
+    headers = ('Name', 'Price', 'Shares', 'Changes')
+    print(f'{headers[0]:>10s} {headers[1]:>10s} {headers[2]:>10s} {headers[3]:>10s}')
+    print('    ---------- --------- --------- ---------')
+
+    for item in portfolio:
+        name_of_stock, price_of_stock, shares_of_stock, change = item['name'], item['price'], item['shares'], \
+                                                                 prices[item['name']] - \
+                                                                 item['price']
+        print(f'{name_of_stock:>10s} {price_of_stock:>10.2f} {shares_of_stock:>10d} {change:>10.2f}')
+
+
+make_report(cost, stock_prices)
+
+
+
+#
+# report = make_report(cost, prices)
+# print(report)
