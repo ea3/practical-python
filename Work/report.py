@@ -103,6 +103,30 @@ def make_report(list_of_stocks, prices_of_stocks):
 
 make_report(cost, stock_prices)
 
+print('____________________________________')
+
+points = [
+  [(1, 4), (10, 40), (23, 14), (5, 6), (7, 8)]
+]
+
+for x, y in points[0]:
+    print(x, y)
+
+print('***********************')
+
+columns = ['name', 'shares', 'price']
+values = ['JPM', '100', '99.74']
+pairs = zip(columns, values)
+print(pairs)
+d = dict(zip(columns, values))
+print(d)
+for columns, values in pairs:
+    print(columns, values)
+
+
+
+
+
 
 
 #
