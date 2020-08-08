@@ -50,11 +50,10 @@ def print_report(reportdata, formatter):
         formatter.row(rowdata)
 
 
-
 def portfolio_report(portfoliofile, pricefile):
-    """
+    '''
     Make a stock report given portfolio and price data files.
-    """
+    '''
     # Read data files
     portfolio = read_portfolio(portfoliofile)
     prices = read_prices(pricefile)
@@ -63,7 +62,7 @@ def portfolio_report(portfoliofile, pricefile):
     report = make_report_data(portfolio, prices)
 
     # Print it out
-    formatter = tableformat.TableFormatter()
+    formatter = tableformat.CSVTableFormatter()
     print_report(report, formatter)
 
 
